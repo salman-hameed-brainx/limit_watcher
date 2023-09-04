@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id "org.jetbrains.kotlin.android"
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        namespace "com.brainx.limitwatcher"
+        applicationId "com.brainx.limitwatcher"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    packagingOptions {
+        jniLibs.pickFirsts.add("lib/**/libc++_shared.so")
+    }
+}
+
+dependencies {
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.9'
+
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.4.1")
+    implementation("com.google.android.material:material:1.5.0")
+
+    // for mapbox
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.maps.android:maps-compose:2.2.1'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-core:5.0.2'
+    implementation 'com.mapbox.maps:android:10.6.0-rc.1'
+    implementation "com.mapbox.navigation:android:2.3.0"
+    implementation "com.google.android.gms:play-services-location:20.0.0"
+    implementation 'com.google.maps.android:android-maps-utils:2.0.3'
+
+/*    // for mapbox
+//    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+//    implementation 'com.google.android.libraries.navigation:navigation:5.0.0'
+//    implementation "com.google.android.gms:play-services-location:20.0.0"
+//    implementation 'com.google.maps.android:android-maps-utils:2.0.3'
+
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-core:0.29.0'
+    implementation "com.mapbox.navigation:android:0.29.0"
+    implementation 'com.mapbox.maps:android:0.29.0'*/
+}
