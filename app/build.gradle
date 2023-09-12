@@ -36,9 +36,9 @@ android {
         viewBinding true
         dataBinding true
     }
-    packagingOptions {
-        jniLibs.pickFirsts.add("lib/**/libc++_shared.so")
-    }
+//    packagingOptions {
+//        jniLibs.pickFirsts.add("lib/**/libc++_shared.so")
+//    }
 }
 
 dependencies {
@@ -57,14 +57,4 @@ dependencies {
     implementation "com.mapbox.navigation:android:2.3.0"
     implementation "com.google.android.gms:play-services-location:20.0.0"
     implementation 'com.google.maps.android:android-maps-utils:2.0.3'
-
-/*    // for mapbox
-//    implementation 'com.google.android.gms:play-services-maps:18.0.2'
-//    implementation 'com.google.android.libraries.navigation:navigation:5.0.0'
-//    implementation "com.google.android.gms:play-services-location:20.0.0"
-//    implementation 'com.google.maps.android:android-maps-utils:2.0.3'
-
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-core:0.29.0'
-    implementation "com.mapbox.navigation:android:0.29.0"
-    implementation 'com.mapbox.maps:android:0.29.0'*/
 }
